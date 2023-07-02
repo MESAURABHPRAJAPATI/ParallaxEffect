@@ -1,0 +1,109 @@
+/* universal Selector */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+#wrapper{
+    /* Height of Wrapper should be equal to Viewport */
+    height: 100vh;
+    /* Movement towards x will be avoided */
+    overflow-x: hidden;
+    /* Doesnt effect the output */
+    overflow-y: auto;
+    /* Perspective value doesnt matters */
+    perspective: 10px;
+}
+.container{
+    /* overlap */
+    position: relative;
+    height: 100%;
+    /* For Adventure text */
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    /* For 3d Game */
+    transform-style: preserve-3d;
+    /* Z index not needed here */
+    z-index: -1;
+}
+.background,.foreground{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    /* Image will fit in the Container ie Viewport*/
+    /* object-fit: cover; */
+}
+.background{
+    /* Image will go back */
+    transform: translateZ(-40px);
+    /* For Zooming */
+    scale:5;
+}
+.foreground{
+    /* Image will go back */
+    transform: translateZ(-20px);
+    /* For Zooming */
+    scale:3;
+}
+h1{
+     /* Available values */
+    position: absolute;   
+    top: 5rem;
+    left:50%;
+    transform: translateX(-50%);
+    font-size: 10rem;
+    letter-spacing: 4px;    
+    color: white;
+    text-shadow: 0 0 10px rgba(0,0,0,0,3);
+}
+
+section{
+    background-color: rgb(45,45,45);
+    color: white;
+    padding: 5rem;
+
+}
+/* ADDING IMAGE NEW TECHNIQUE */
+.bg1{
+    background-image: url(sport-1.jpg);
+}
+.bg2{
+    background-image: url(sport-2.jpg);
+}
+
+.bg3{
+    background-image: url(sport-3.jpg);
+}
+.bg{
+    position: relative;
+    width: 100%;
+    /* IMAGE WILL BE FIXED otherwise it will be also going to move with the text*/
+    background-attachment: fixed;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+}
+.secgeading{
+    font-size: 6rem;
+    padding: 0 11rem;
+}
+.text{
+    font: size 1.5rem;
+    padding: 0 10rem;
+    margin: 5rem 0;
+}
+.desc{
+    position: absolute;
+    background-color: white;
+    padding: 0.5rem 2.5rem;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: black;
+    font-size: 3.5rem;
+    font-weight: 600;
+}
+
